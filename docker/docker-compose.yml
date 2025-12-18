@@ -1,0 +1,32 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: shopwear_db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: shopwear
+      MYSQL_USER: shopwear
+      MYSQL_PASSWORD: shopwear
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3307:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+    command: --default-authentication-plugin=mysql_native_password
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: shopwear_phpmyadmin
+    restart: unless-stopped
+    depends_on:
+      - db
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_USER: shopwear
+      PMA_PASSWORD: shopwear
+    ports:
+      - "8081:80"
+
+volumes:
+  dbdata:
