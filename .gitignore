@@ -1,0 +1,11 @@
+# --- ENVIRONNEMENT GENERAL ---
+.env
+.env.local
+
+# --- BACKEND ---
+backend/var
+backend/vendor
+
+# --- FRONTEND ---
+frontend/node_modules
+frontend/dist
