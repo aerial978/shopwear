@@ -1,11 +1,15 @@
-# --- ENVIRONNEMENT GENERAL ---
-.env
-.env.local
+# --- OS ---
+.DS_Store
+Thumbs.db
 
-# --- BACKEND ---
-backend/var
-backend/vendor
+# --- IDE ---
+.vscode/
+.idea/
 
-# --- FRONTEND ---
-frontend/node_modules
-frontend/dist
+# --- Docker (si vous avez un .env dans docker/) ---
+docker/.env
+
+# (Optionnel) Fichiers temporaires / archives
+*.tmp
+*.bak
+*.swp
