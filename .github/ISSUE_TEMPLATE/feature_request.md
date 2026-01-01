@@ -7,14 +7,28 @@ assignees: ''
 
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+---
+name: Feature request
+about: Suggest a new feature for this project
+title: "[FEATURE] "
+labels: feature
+assignees: ''
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+---
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+## Description
+
+Briefly describe the feature you want to implement.
+
+## Tasks
+
+  - [ ] Describe the goal
+  - [ ] Implement the logic
+  - [ ] Add necessary views/controllers
+  - [ ] Test the feature
+
+**Additional context**
+Add any other context or screenshots about the feature request here.
 
 **Additional context**
 Add any other context or screenshots about the feature request here.
