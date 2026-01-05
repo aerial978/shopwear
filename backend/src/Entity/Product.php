@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\ProductRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: ProductRepository::class)]
 class Product
@@ -12,37 +13,48 @@ class Product
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(['product:list', 'product:detail'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(['product:list', 'product:detail'])]
     private string $name;
 
     #[ORM\Column(length: 255, unique: true)]
+    #[Groups(['product:list', 'product:detail'])]
     private string $slug;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Groups(['product:detail'])]
     private ?string $description = null;
 
     #[ORM\Column]
+    #[Groups(['product:list', 'product:detail'])]
     private int $priceCents;
 
     #[ORM\Column(length: 3)]
+    #[Groups(['product:list', 'product:detail'])]
     private string $currency = 'EUR';
 
     #[ORM\Column(options: ['default' => true])]
+    #[Groups(['product:list', 'product:detail'])]
     private bool $isActive = true;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups(['product:list', 'product:detail'])]
     private ?string $mainImageUrl = null;
 
     #[ORM\Column]
+    #[Groups(['product:list', 'product:detail'])]
     private \DateTimeImmutable $createdAt;
 
     #[ORM\Column]
+    #[Groups(['product:detail'])]
     private \DateTimeImmutable $updatedAt;
 
     #[ORM\ManyToOne(inversedBy: 'products')]
     #[ORM\JoinColumn(nullable: false)]
+    #[Groups(['product:list', 'product:detail'])]
     private Category $category;
 
     public function __construct()
