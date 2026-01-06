@@ -8,19 +8,56 @@ The project's objective is to present a **modern, clean, and credible** technica
 
 The project is intentionally divided into a **backend API** and a **frontend SPA**, with an isolated database hosted via Docker.
 
+## Current scope (MVP)
+
+### Product domain — Read-only catalogue
+
+Implemented features:
+
+- Public product catalogue (read-only)
+- Product categories (active only)
+- Pagination
+- Text search (`name`, `slug`)
+- Sorting (newest / price)
+- Filtering by category (slug-based)
+- Responsive frontend UI (desktop → mobile)
+- UI states: loading, empty, error
+
+Out of scope for the MVP:
+- Authentication
+- Cart
+- Orders
+- Payments
+- Admin back-office
+
+---
+
 ## Badges
 
 ---
 
 ### Tech stack
 
-Backend : Symfony 6.4 LTS (API REST)
-Frontend : React + Vite + TypeScript
-Styling :Tailwind CSS (v4, plugin Vite)
-Base de données : MySQL 8 (Docker)
-Admin DB : phpMyAdmin
-Architecture : Headless / API-first
-OS dev : Windows
+**Backend**
+- Symfony 6.4 LTS (REST API, JSON)
+- Doctrine ORM
+- Symfony Serializer (serialization groups)
+- Faker (fixtures)
+- MySQL 8 (Docker)
+- phpMyAdmin
+
+**Frontend**
+- React 18
+- Vite
+- TypeScript
+- Tailwind CSS v4 (Vite plugin)
+- Fetch API
+
+**Architecture**
+- Headless / API-first
+- Backend & Frontend separated
+- Monorepo
+- Development OS: Windows
 
 ### Installation and startup (locally)
 
